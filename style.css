@@ -1,0 +1,386 @@
+:root {
+    --primary-color: #5091cd;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color:#e7e7e7;
+  }
+  /* Global Stylings */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: None;
+    border-radius: 0.25rem;
+    background-color:#cdd5da;
+    color:#fff;
+  }
+  
+  
+  header {
+    background-color:var(--primary-color);
+    padding: 8px;
+  }
+  
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Progressbar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+  }
+  
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+    justify-content: space-around;
+  }
+  
+  .progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+  }
+  
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+   */
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .progress-step-active {
+    background-color: var(--primary-color);
+    color: black;
+  }
+  
+  .progress-step-active::after{
+    content:attr(data-title);
+    color: black;
+  }
+  /* Form */
+  .form {
+    width: clamp(500px, 60%, 750px);
+    margin: 0 auto;
+    /* border: 1px solid#cdd5da; */
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+  }
+
+  .form p{
+    text-align: center;
+    font-size: 3.5em;
+  }
+
+  
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group {
+    margin: 2rem 0;
+  }
+  
+  
+
+  /* ANIMATION   / */
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button */
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.5rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+    text-align: center;
+    /* border-radius: 0.25rem; */
+    cursor: pointer;
+    /* transition: 0.3s; */
+    width: 36%;
+    background-color: #e7e7e7;
+    border: 1px solid var(--primary-color);
+}
+
+.btn:hover {
+  background-color:var(--primary-color);
+  color: white;
+  border-color: none;
+}
+  
+  .btn:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  }
+
+
+  .form .get-started{
+    padding: 0.5em;
+    width: 150px;
+    margin-left: 265px;
+    margin-top: -79px;
+  }
+
+  #id_title{
+    width: 90%;
+    background-color:#cdd5da;
+  }
+
+  #id_surname{
+    width: 90%;
+    background-color:#cdd5da;
+  }
+
+  #id_firstname, #for_firstname{
+    width: 98%;
+    
+    margin-left: -12px;
+  }
+
+  #id_othername{
+    width: 90%;
+    background-color:#cdd5da;
+  }
+
+  #id_phonenumber{
+    width: 90%;
+    background-color:#cdd5da;
+  }
+  .phonenumber{
+    margin: -1em;
+    margin-left: 2px;
+    width: 56%;
+  }
+
+  .address{
+    margin-left: 379px;
+    width: 60%;
+    margin-top: -67px;
+  }
+
+
+  .companyname{
+    margin: -1em;
+    margin-left: 2px;
+    width: 50%;
+  }
+
+ 
+
+
+  .companyaddress{
+    margin-left: 379px;
+    width: 60%;
+    margin-top: -67px;
+  }
+
+  select{
+    padding: 0.75rem;
+    width: 50%;
+    border: 1px solid#cdd5da;
+    border-radius: 0.25rem;
+    background-color:#cdd5da;
+  }
+
+  .typeofmarriage{
+    margin-left: 277px;
+    width: 70%;
+    margin-top: -71px;
+  }
+
+
+  .martialstatus{
+    margin: -1em;
+    margin-left: 2px;
+    width: 70%;
+
+  }
+
+  .meansofidenification{
+    margin-left: 551px;
+    width: 70%;
+    margin-top: -101px;
+  }
+
+  .identificationnumber{
+    margin: -1em;
+    margin-left: 2px;
+    width: 35%;
+    margin-bottom: 39px;
+  }
+  
+  .name {
+    display: grid;
+    grid-template-columns: 76px 311px 234px 193px;
+  }
+
+
+  .form-step .input-group input:hover, .form-step  .input-group input::after {
+    background: var(--primary-color);
+    border: none;
+  }
+
+
+  option{
+    border: 1px solid#cdd5da;
+    border-radius: 0.25rem;
+    background-color:#cdd5da;
+  }
+
+  input ::after{
+    background: var(--primary-color);
+    
+  }
+
+.nameofspouse{
+  margin:2em 0;
+  width:49%;
+}  
+
+.nameofaddress{
+  width:50%;
+  margin-top: -97px;
+  margin-left: 359px;
+}
+
+
+.noofdependents{
+  width: 30%;
+  margin-top: -17px;
+}
+
+.namesofdependents{
+  width: 69%;
+  margin-top: -95px;
+  margin-left: 226px;
+}
+
+.form-step h4 {
+  color:var(--primary-color)
+}
+
+.fullname{
+  width: 49%;
+  margin-top: -8px;
+}
+
+.addressdetails{
+  width: 50%;
+  margin-top: -98px;
+  margin-left: 361px;
+  
+}
+
+.phone {
+  width: 32%;
+  margin-top: -15px;
+}
+
+.email {
+  margin-top: -97px;
+    width: 33%;
+    margin-left: 232px;
+}
+
+.values{
+  width: 34%;
+  margin-left: 472px;
+  margin-top: -98px;
+}
+
+.psa{
+  width: 50%;
+}
+
+.rsa{
+  width: 50%;
+  margin-left: 369px;
+  margin-top: -95px;
+}
+.bankname select{
+  width: 102%;
+}
+
+.accounnumber{
+  margin-top: -12px;
+  width: 49%;
+}
+
+.branch{
+  margin-top: -97px;
+    width: 50%;
+    margin-left: 366px;
+}
