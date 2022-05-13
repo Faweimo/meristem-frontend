@@ -43,5 +43,5 @@ function updateProgressbar() {
   const progressActive = document.querySelectorAll(".progress-step-active");
 
   progress.style.width =
-    ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+    ((progressActive.length -1) / (progressSteps.length -1)) * 100 + "%";
 }
